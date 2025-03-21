@@ -9,27 +9,25 @@ const TextInput = ({ text, setText, title, subtitle, placeholder }) => {
         justifyContent: "space-between",
         backgroundColor: "#343e4b",
         borderRadius: "4px",
-        width: "100%",
-        padding: "6px",
+        padding: "5px",
       }}
     >
-      <span style={{ width: "180px", textAlign: "left", paddingLeft: "10px" }}>
+      <span style={{ width: "30%", textAlign: "left", paddingLeft: "10px" }}>
         {title}
       </span>
       <div
         style={{
           display: "flex",
-          padding: "10px",
+          width: "65%",
           backgroundColor: "#47505D",
-          gap: "10px",
           borderRadius: "5px",
           justifyContent: "space-between",
         }}
       >
-        <div style={{ width: "120px" }}>{subtitle}</div>
+        <div style={{ width: "40%" }}>{subtitle}</div>
         <input
           className="no-hover-input"
-          style={{ background: "transparent", border: "none" }}
+          style={{ background: "transparent", border: "none", width: "50%" }}
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}

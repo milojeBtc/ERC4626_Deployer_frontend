@@ -82,7 +82,7 @@ button:last-child {
   margin-bottom: 0;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -93,7 +93,7 @@ button:last-child {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 .NavBar {
   display: flex;
@@ -110,9 +110,10 @@ button:last-child {
 }
 
 .Card {
-  min-width: 45%;
-  width: 500px;
-  min-height: 150px;
+  /* min-width: 45%; */
+  /* width: 500px; */
+  width: 100%;
+  /* min-height: 150px; */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -163,11 +163,21 @@ function App() {
   return (
     <div className="App">
       <div className="NavBar">
-        <h2>ERC4626 TokenVault Deploy Platform</h2>
+        {/* <h2>COVAULT</h2> */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={logo} width="30px" />
+          <h2>COVAULT</h2>
+        </div>
         <div className="WalletConnect">
           <button onClick={isConnected ? disconnectWallet : connectWallet}>
             <img src={metaMaskImage} alt="Metamask" />
-            <div>
+            <div style={{ color: "white" }}>
               {isConnected ? formatAddress(walletAddress) : `Connect Wallet`}
             </div>
           </button>
