@@ -110,10 +110,9 @@ button:last-child {
 }
 
 .Card {
-  /* min-width: 45%; */
-  /* width: 500px; */
-  width: 100%;
-  /* min-height: 150px; */
+  max-width: 500px;
+  min-width: 450px;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;

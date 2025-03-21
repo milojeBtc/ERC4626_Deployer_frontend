@@ -163,7 +163,6 @@ function App() {
   return (
     <div className="App">
       <div className="NavBar">
-        {/* <h2>COVAULT</h2> */}
         <div
           style={{
             display: "flex",
@@ -298,7 +297,7 @@ function App() {
             {!loading ? (
               <p>Deploy Vault</p>
             ) : (
-              <ClipLoader color={"#3498db"} size={20} />
+              <ClipLoader color={"#3498db"} size={35} />
             )}
           </button>
           <div style={{ paddingBottom: "30px" }}>
