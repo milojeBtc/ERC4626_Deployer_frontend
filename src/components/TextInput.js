@@ -22,6 +22,7 @@ const TextInput = ({ text, setText, title, subtitle, placeholder }) => {
           backgroundColor: "#47505D",
           borderRadius: "5px",
           justifyContent: "space-between",
+          padding: "6px",
         }}
       >
         <div style={{ width: "40%" }}>{subtitle}</div>
