@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import io from "socket.io-client";
-import { control_abi } from "./abi/control_abi.js";
-import { token_abi } from "./abi/token_abi.js";
 import { ethers } from "ethers";
 import { ClipLoader } from "react-spinners";
 import {
@@ -106,8 +103,10 @@ function App() {
   };
 
   const deployTokenVault = async () => {
+    setLoading(true);
     if (!walletAddress) {
       setErrorMessage("Please connect your MetaMask wallet first.");
+      setLoading(false);
       return;
     }
 
@@ -151,10 +150,12 @@ function App() {
             )
             .then((address) => {
               setDeployedVault(address);
+              setLoading(false);
             });
         })
         .catch((error) => {
           console.log("Error occured:", error);
+          setLoading(false);
         });
     }
   };
@@ -260,24 +261,40 @@ function App() {
             />
           </div>
 
-          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%"}}>
-            <div style={{padding: "0px"}}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
+            <div style={{ padding: "0px" }}>
               <h3>Vault ID</h3>
               <div>(0x...........)</div>
             </div>
             <div>
               <h4>Estimated Network Fees</h4>
               <div>
-                <div>Approval   $0.15</div>
-                <div>Deposit    $0.11</div>
+                <div>Approval $0.15</div>
+                <div>Deposit $0.11</div>
                 <div>Withdrawal $0.15</div>
               </div>
             </div>
           </div>
-          <button onClick={deployTokenVault} style={{width: "80%", backgroundColor: "#F6F951", color: "black"}}>Deploy Vault</button>
-          <div style={{paddingBottom: "30px"}}>
-          By clicking "Fonfirm DEPLOY Vault", you agree to the Terms of Service and acknowledge that you have read and understand the [compnay] disclaimer.
-          Learn more about the vault you're deploying
+          <button
+            onClick={deployTokenVault}
+            style={{ width: "80%", backgroundColor: "#F6F951", color: "black" }}
+          >
+            {!loading ? (
+              <p>Deploy Vault</p>
+            ) : (
+              <ClipLoader color={"#3498db"} size={20} />
+            )}
+          </button>
+          <div style={{ paddingBottom: "30px" }}>
+            By clicking "Fonfirm DEPLOY Vault", you agree to the Terms of
+            Service and acknowledge that you have read and understand the
+            [compnay] disclaimer. Learn more about the vault you're deploying
           </div>
         </div>
       </div>
