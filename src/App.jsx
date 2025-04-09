@@ -270,7 +270,7 @@ function App() {
             />
           </div>
 
-          <div
+          {/* <div
             style={{
               display: "flex",
               justifyContent: "space-evenly",
@@ -289,7 +289,7 @@ function App() {
                 <div>Withdrawal $0.15</div>
               </div>
             </div>
-          </div>
+          </div> */}
           <button
             onClick={deployTokenVault}
             style={{ width: "80%", backgroundColor: "#F6F951", color: "black" }}
@@ -301,9 +301,9 @@ function App() {
             )}
           </button>
           <div style={{ paddingBottom: "30px" }}>
-            By clicking "Fonfirm DEPLOY Vault", you agree to the Terms of
+            By clicking "Confirm DEPLOY Vault", you agree to the Terms of
             Service and acknowledge that you have read and understand the
-            [compnay] disclaimer. Learn more about the vault you're deploying
+            compnay disclaimer. Learn more about the vault you're deploying
           </div>
         </div>
       </div>
